@@ -1,0 +1,915 @@
+body {
+    background-image: url("images/white.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: var(--supporting);
+    font-family: SF-Bold;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --main: #1D405C;
+    --supporting: #F4F2F1;
+    --text: #565360;
+    --label: #908e9b;
+    --disabled: #E1DFE9;
+}
+
+@font-face {
+    src: url("fonts/SF-Pro-Display-Regular.otf");
+    font-family: SF-Regular;
+}
+
+@font-face {
+    src: url("fonts/SF-Pro-Display-Semibold.otf");
+    font-family: SF-Semibold;
+}
+
+@font-face { 
+    src: url("fonts/SF-Pro-Display-Bold.otf");
+    font-family: SF-Bold;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    transition: all 0.16s;
+}
+
+a:hover {
+    color: var(--main);
+}
+
+h2 {
+    margin-left: 20px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 80vw; /* adjust the width as needed */
+    margin: 0 auto;
+    padding-top: 8vh;
+}
+
+.nav-bar {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 8vh;
+    width: 80vw;
+    background: rgba(255, 255, 255, 0.5);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.nav-bar > * {
+    display: inline-block;
+    margin: 0 10px; /* adjust the margin as needed */
+}
+
+.nav-bar div {
+    flex: 2;
+    padding: 0 25px;
+    height: 65%;
+}
+
+.first-div {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.secondary-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="search"] {
+    position: relative;
+    left: 8px;
+    height: 24px;
+    width: 72%;
+    padding-left: 10px;
+    font-family: SF-Semibold;
+    border: none;
+}
+
+button[type="submit"] {
+    position: relative;
+    top: -1px;
+    height: 25px;
+    width: 25%;
+    color: white;
+    background-color: var(--main);
+    border: none;
+    font-size: 0.7rem;
+    text-align: center;
+    transition: all 0.16s;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--main);
+    color: var(--supporting);
+}
+
+.third-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 0.9rem;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    max-width: 80%;
+}
+
+.user-info-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    top: -60px;
+    height: 350px;
+    width: 100%;
+    margin-top: 100px;
+}
+
+/* index.php */
+
+.products-box {
+    position: relative;
+    height: 260px;
+    width: 150px;
+    margin: 10px; /* add some margin to separate the boxes */
+    box-shadow:
+        12.5px 12.5px 10px rgba(0, 0, 0, 0.02),
+        100px 100px 80px rgba(0, 0, 0, 0.04);
+    overflow: hidden; /* add this to prevent overflow */
+}
+
+.products-box img {
+    height: 100px;
+    width: 150px;
+    object-fit: cover;
+    transition: all 0.15s;
+}
+
+.products-box img:hover {
+    transform: scale(1.1); /* zoom in on hover */
+}
+
+.productinfo-div {
+    padding-left: 15px;
+    padding-right: 10px;
+    line-height: 0.9rem;
+    height: 3.5rem;
+}
+
+#productName {
+    font-size: 1rem;
+}
+
+#productPrice {
+    position: relative;
+    top: -12px;
+    font-size: 0.8rem;
+    color: var(--secondary-clr);
+}
+
+.productoperation-div {
+    position: relative;
+    top: 0px;
+    display: grid;
+    place-items: center;
+    line-height: 1rem;
+    font-size: 0.8rem;
+    height: 4.5rem; /* adjust the height to fit two lines of text */
+}
+
+.productoperation-div button {
+    height: 27px;
+    width: 120px;
+    border: none;
+    border-radius: 10px;
+    box-shadow:
+            6.7px 6.7px 5.3px rgba(0, 0, 0, 0.012),
+            22.3px 22.3px 17.9px rgba(0, 0, 0, 0.018),
+            100px 100px 80px rgba(0, 0, 0, 0.03)
+            ;
+    background-color: white;
+    font-family: SF-Semibold;
+
+}
+
+#viewProduct {
+    color: rgb(44,62,80);
+    transition: all 0.14s ease-in-out;
+}
+
+#viewProduct:hover {
+    color: white;
+    background: rgb(0,0,0);
+    background: linear-gradient(281deg, rgba(0,0,0,1) 0%, rgba(44,62,80,1) 100%);
+}
+
+#addToCart {
+    color: var(--main);
+    background-color: var(--supporting);
+    transition: all 0.12s ease;
+}
+
+#addToCart:hover {
+    background-color: var(--main);
+    color: var(--supporting);
+}
+
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    margin-top: 160px;
+    margin-bottom: 100px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    height: 60%;
+    width: 50%;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#modal-content {
+    display: flex;
+    flex-direction: flex-start;
+    margin: 0;
+}
+
+#modal-close {
+    position: absolute;
+    top: 110px;
+    right: 240px; 
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#modal-close:hover,
+#modal-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modalfirst {
+    height: 360px;
+    width: 180px;
+}
+
+#modalProductImage {
+    height: 100%;
+    width: 180px;
+    object-fit: cover;
+}
+
+.modalsecond {
+    width: 470px;
+}
+
+.modalsecond div {
+    padding-left: 25px;
+    width: 100%;
+}
+
+.modalprodname {
+    font-size: 1.5rem;
+}
+.modalprodprice {
+    position: relative;
+    top: -22px;
+    color: var(--text);
+}
+
+.modalprodtype {
+    position: relative;
+    top: -36px;
+    color: #707070;
+    font-family: SF-Semibold;
+    font-size: 0.9rem;
+}
+
+.modalproddesctitle {
+    position: relative;
+    top: -38px;
+}
+
+.modalproddesc {
+    display: flex;
+    align-content: right;
+    position: relative;
+    top: -70px;
+    font-size: 0.9rem;
+    font-family: SF-Regular;
+    height: 110px;
+    max-width: 410px; /* add this to limit the width of the element */
+    margin-right: auto; /* add this to align the element to the left */
+}
+
+.modalbtn {
+    display: flex;
+    align-items: center;
+    height: 62px;
+    max-width: 410px;
+    position: relative;
+    right: -10px;
+    bottom: 0px;
+    padding-right: -200px;
+}
+
+.modalbtn button {
+    position: relative;
+    left: 280px;
+    height: 30px;
+    width: 120px;
+    border: none;
+    border-radius: 10px;
+    box-shadow:
+                12.5px 12.5px 10px rgba(0, 0, 0, 0.055),
+                100px 100px 80px rgba(0, 0, 0, 0.11)
+                ;
+    font-family: SF-Bold;
+}
+
+/* admin.php */
+
+.admin-main-container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100vw;
+}
+
+
+.admin-first-div {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.admin-secondary-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-input[type="search"] {
+    position: relative;
+    left: 8px;
+    height: 24px;
+    width: 72%;
+    padding-left: 10px;
+    font-family: SF-Semibold;
+    border: none;
+}
+
+.admin-button[type="submit"] {
+    position: relative;
+    top: -1px;
+    height: 25px;
+    width: 25%;
+    color: white;
+    background-color: var(--main);
+    border: none;
+    font-size: 0.7rem;
+    text-align: center;
+    transition: all 0.16s;
+}
+
+.admin-button[type="submit"]:hover {
+    background-color: var(--main);
+    color: var(--supporting);
+}
+
+.admin-third-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 0.9rem;
+}
+
+.admin-contents-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 70%;
+    margin: 75px auto;
+    padding: 20px; 
+    box-sizing: border-box;
+}
+
+.admin-options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 120px;
+    width: 670px;
+    margin-bottom: 20px;
+    background-color: var(--supporting);
+    border-radius: 10px;
+    box-shadow:
+                12.5px 12.5px 10px rgba(0, 0, 0, 0.03),
+                100px 100px 80px rgba(0, 0, 0, 0.06)
+                ;
+    transition: all 0.16s;
+}
+
+.admin-options:hover {
+    background-color: var(--main);
+    color: white;
+}
+
+.admin-options:hover i {
+    color: white;
+}
+
+.admin-function-symbol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+}
+
+.color-icon {
+    color: var(--main);
+}
+
+.admin-function-symbol i {
+    font-size: 3rem;
+    color: var(--secondary-clr);
+}
+
+.admin-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 80%;
+}
+
+.admin-wrapper h2 {
+    margin-left: 0px;
+}
+
+
+.admin-function-name {
+    position: relative;
+    top: 5px;
+    display: flex;
+    align-items: center;
+    padding-left: 14px;
+    font-family: SF-Bold;
+    height: 30%;
+    width: 100%;
+}
+
+.admin-function-desc {
+    position: relative;
+    top: -5px;
+    display: flex;
+    align-items: center;
+    padding-left: 14px;
+    font-family: SF-Bold;
+    height: 50%;
+    width: 100%;
+}
+
+.admin-function-desc p {
+    max-width: 80%;
+    font-family: SF-Regular;
+    font-size: 0.9rem;
+}
+
+/* adminLogin.php */
+.admin-login-input {
+    height: 30px;
+    width: 200px;
+    border-radius: 20px;
+    border: none;
+    padding-left: 14px;
+    box-shadow:
+                12.5px 12.5px 10px rgba(0, 0, 0, 0.05),
+                100px 100px 80px rgba(0, 0, 0, 0.1)
+                ;
+    font-family: SF-Semibold;
+}
+
+
+
+.admin-login-main-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 80vw; /* adjust the width as needed */
+    margin: 0 auto;
+    padding-top: 8vh;
+}
+
+.admin-login-contents-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.admin-login-info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
+    top: -60px;
+    height: 350px;
+    width: 30%;
+    margin-top: 100px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow:
+        12.5px 12.5px 10px rgba(0, 0, 0, 0.02),
+        100px 100px 80px rgba(0, 0, 0, 0.04);
+}
+
+.admin-login-info-container div {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+#adminLoginButton {
+    height: 30px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    box-shadow:
+                12.5px 12.5px 10px rgba(0, 0, 0, 0.05),
+                100px 100px 80px rgba(0, 0, 0, 0.1)
+                ;
+    font-family: SF-Semibold;
+    background-color: var(--main);
+    color: white;
+    transition: all 0.16s;
+}
+
+#adminLoginButton:hover {
+    background-color: var(--main);
+    opacity: 0.95;
+    color: white;
+}
+
+/* cart.php */
+
+.cart-main-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    padding-top: 8vh;
+}
+
+.cart-info-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    top: -60px;
+    height: 350px;
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 130px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#cartEmpty {
+    position: relative;
+    top: -10px;
+    text-align: center;
+    font-family: SF-Semibold;
+}
+
+.cart-contents-container {   
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+    flex-grow: 1;
+}
+
+
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    height: 120px;
+    width: 670px;
+    margin-bottom: 20px;
+    background-color: var(--light-clr);
+    box-shadow:
+            12.5px 12.5px 10px rgba(0, 0, 0, 0.02),
+            100px 100px 80px rgba(0, 0, 0, 0.04);
+}
+
+
+#cartImageDiv {
+    height: 100%;
+    width: 20%;
+}
+
+#cartImageDiv img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#cartInfosDiv {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 60%;
+}
+
+#cartInfosDiv div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-top: 5px;
+    padding-left: 20px;
+}
+
+#cartNameDiv {
+    position: relative;
+    top: 3px;
+    height: 25px;
+    font-size: 1.2rem;
+    font-family: SF-Bold;
+}
+
+#cartPriceDiv {
+    height: 25px;
+    position: relative;
+    top: -8px;
+    font-size: 0.8rem;
+    font-family: SF-Semibold;
+    color: var(--secondary-clr);
+}
+
+#cartTypeDiv {
+    height: 25px;
+    position: relative;
+    top: -22px;
+    font-size: 0.7rem;
+    font-family: SF-Semibold;
+}
+
+#cartDescDiv {
+    display: flex;
+    
+    position: relative;
+    top: -27px;
+    height: 40px;
+    width: 70%;
+    font-size: 0.6rem;
+    font-family: SF-Regular;
+    border: 1px solid black;
+}
+
+#cartOperationDiv {
+    display: grid;
+    place-items: center;
+    height: 50%;
+    width: 20%;
+}
+
+
+.quantity-input {
+    width: 30px;
+    text-align: center;
+}
+
+#cartRemoveDiv button {
+    height: 27px;
+    width: 100px;
+    border: none;
+    border-radius: 10px;
+    box-shadow:
+                12.5px 12.5px 10px rgba(0, 0, 0, 0.055),
+                100px 100px 80px rgba(0, 0, 0, 0.11)
+                ;
+    background-color: white;
+    color: var(--main);
+    font-family: SF-Semibold;
+    transition: all 0.20s;
+
+}
+
+#cartRemoveDiv button:hover {
+    background-color: var(--main);
+    color: white;
+}
+
+.checkout-container {
+    width: 670px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    background-color: white;
+    z-index: 2;
+    margin-top: auto;
+}
+
+#quantityControl {
+    border: none;
+    box-shadow: 2px 2px 3px rgb(220, 220, 220);
+    transition: all 0.10s;
+}
+
+#quantityControl:hover {
+    background-color: var(--main);
+    color: white;
+}
+
+.checkout-btns {
+    height: 100%;
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
+}
+
+.checkout-btns input, .checkout-btns button {
+    height: 27px;
+    width: 100px;
+    border: none;
+    border-radius: 10px;
+    box-shadow:
+                12.5px 12.5px 10px rgba(0, 0, 0, 0.055),
+                100px 100px 80px rgba(0, 0, 0, 0.11)
+                ;
+    background-color: white;
+    font-family: SF-Semibold;
+    transition: all 0.20s;
+} 
+
+#goBack {
+    color: var(--secondary-clr);
+    transition: all 0.10s;
+}
+
+#goBack:hover {
+    background-color: var(--secondary-clr);
+    color: white;
+}
+
+#checkOut {
+    color: var(--main-clr);
+    transition: all 0.10s;
+}
+
+#checkOut:hover {
+    background-color: var(--main-clr);
+    color: white;
+}
+
+/* login.php */
+#loginDesc {
+    font-size: 0.7rem;
+    color: var(--text);
+}
+
+a:hover {
+    color: var(--main);
+}
+
+h2 {
+    margin-left: 20px;
+}
+
+
+.login-input {
+    height: 30px;
+    width: 200px;
+    border-radius: 20px;
+    border: none;
+    padding-left: 14px;
+    box-shadow:
+                12.5px 12.5px 10px rgba(0, 0, 0, 0.05),
+                100px 100px 80px rgba(0, 0, 0, 0.1)
+                ;
+    font-family: SF-Semibold;
+}
+
+.login-main-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 80vw; /* adjust the width as needed */
+    margin: 0 auto;
+    padding-top: 8vh;
+}
+
+.login-contents-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.login-info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
+    top: -60px;
+    height: 350px;
+    width: 30%;
+    margin-top: 100px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow:
+        12.5px 12.5px 10px rgba(0, 0, 0, 0.02),
+        100px 100px 80px rgba(0, 0, 0, 0.04);
+}
+
+.login-info-container div {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#registerA {
+    position: relative;
+    top: 5px;
+    font-size: 0.8rem;
+    color: var(--main);
+    transition: all 0.16s;
+}
+
+#registerA:hover {
+    color: black;
+}
+
+#loginBtn {
+    height: 30px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    box-shadow:
+                12.5px 12.5px 10px rgba(0, 0, 0, 0.05),
+                100px 100px 80px rgba(0, 0, 0, 0.1)
+                ;
+
+    font-family: SF-Semibold;
+    background-color: var(--main);
+    color: white;
+    transition: all 0.16s;
+}
+
+#loginBtn:hover {
+    background-color: var(--main);
+    opacity: 0.95;
+    color: white;
+}
